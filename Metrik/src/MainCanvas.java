@@ -17,16 +17,16 @@ public class MainCanvas extends Canvas {
 		this.setFocusable(false);
 	}
 	
-	//draws a circle
+	//draws a rectangle
 	@Override
 	public void paint(Graphics g) {
-		Ellipse2D ellipse2D;
-		ellipse2D = new Ellipse2D.Float(
+		Rectangle2D rectangle2D2D;
+		rectangle2D2D = new Rectangle2D.Float(
 				_xcoord-12.5F, _ycoord-12.50F, //coords
 				25.0F, 25.0F); //size
 		Graphics2D gd2 = (Graphics2D)g;
 	//	g.setColor(Color.BLACK);
-		gd2.draw(ellipse2D);
+		gd2.draw(rectangle2D2D);
 				
 		//System.out.println("keks");
 		

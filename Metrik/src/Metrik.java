@@ -1,8 +1,8 @@
 /** 
- *Creates a window on which a circle is drawn when double-clicked.
+ *Creates a window on which a rectangle is drawn when double-clicked.
  *     
  * @author Nico Hinterthaner, Hoang Long Heiligentag
- * @version 1.0
+ * @version 1.0.1
  * 
  */
 import java.awt.*;
