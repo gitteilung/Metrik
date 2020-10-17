@@ -2,7 +2,7 @@
  *Creates a window on which a circle is drawn when double-clicked.
  *     
  * @author Nico Hinterthaner, Hoang Long Heiligentag
- * @version 1.0
+ * @version 1.1.0
  * 
  */
 import java.awt.*;
@@ -24,6 +24,7 @@ public class Metrik {
 		Mf.add(Mc);
 		//adds the MouseListener to the canvas
 		Mc.addMouseListener(Mm);
+		Mf.setMenuBar(new MainMenuBar());
 		
 		
 	}

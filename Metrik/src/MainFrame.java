@@ -9,7 +9,7 @@ public class MainFrame extends Frame {
 		this.setSize(width, height);
 		this.setLayout(null);
 		this.setVisible(true);
-		this.setTitle("Metrik Version 1.0");
+		this.setTitle("Metrik Version 1.1.0");
 		MainWindowListener te= new MainWindowListener();
 		this.addWindowListener(te);
 		
