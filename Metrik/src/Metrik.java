@@ -21,13 +21,20 @@ public class Metrik {
 		MainCanvas Mc = new MainCanvas(width, height);
 		MainMouseListener Mm = new MainMouseListener(Mc);
 		
+		ScrollPane radiusSlider= new ScrollPane();
+		radiusSlider.setBounds(600, 600, 200, 20);
+		Mf.add(radiusSlider);
+		
 		//creates Label   
 		Label derKreis1 = new Label ("  Koordinaten Kreis1: ");	
-		derKreis1.setBounds(20, 40, 250, 15);
+		derKreis1.setBounds(20, 60, 250, 15);
 		Label derKreis2 = new Label ("  Koordinaten Kreis2: ");
-		derKreis2.setBounds(20, 60, 250, 15);
+		derKreis2.setBounds(20, 80, 250, 15);
 		Mf.add(derKreis1);
 		Mf.add(derKreis2);
+		Label radius = new Label ("  Kreisradius: ");	
+		radius.setBounds(20, 40, 250, 15);
+		Mf.add(radius);
 		
 		
 		//adds the canvas to the frame
@@ -38,6 +45,8 @@ public class Metrik {
 		Mc.setLabel(derKreis2, 2);
 		//creates a menubar and adds it to the window
 		Mf.setMenuBar(new MainMenuBar(Mc));
+		
+	
 		
 	//adsadaw	
 	}
