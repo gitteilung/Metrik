@@ -2,47 +2,59 @@ import java.awt.*;
 import java.awt.geom.*;
 import java.awt.event.*;
 
+
 public class MainCanvas extends Canvas {
 
-	// coordinates for the drawing
+	//coordinates for the drawing
 	float _xcoord1;
 	float _ycoord1;
 	float _xcoord2;
 	float _ycoord2;
+	
 
 	int _circle_counter = 0;
-
+	private Label Label1;
+	private Label Label2;
+	
+	
+	
 	public MainCanvas(int width, int height) {
 		this.setSize(width, height);
 		this.setBackground(Color.GREEN);
 		this.setVisible(true);
 		this.setFocusable(false);
+		
 	}
-
+	
 	// draws a new circle, or redraws both, e.g. when changing the background
 	@Override
-	public void paint(Graphics g) {
+	public void paint(Graphics g) { 
 		if (_circle_counter > 0) {
-
+			
 			if (_circle_counter == 2) {
 				_circle_counter = 1;
 				paint(this.getGraphics());
 				_circle_counter = 2;
 			}
 
-			Ellipse2D ellipse2D;
-			ellipse2D = new Ellipse2D.Float(this.getXCoord(_circle_counter) - 12.5F,
-					this.getYCoord(_circle_counter) - 12.50F, // coords
-					25.0F, 25.0F); // size
-			Graphics2D gd2 = (Graphics2D) g;
-			// g.setColor(Color.BLACK);
-			gd2.draw(ellipse2D);
-		}
-		// System.out.println("keks");
-
+			
+		Ellipse2D ellipse2D;
+		ellipse2D = new Ellipse2D.Float(this.getXCoord(_circle_counter) - 12.5F,
+				this.getYCoord(_circle_counter) - 12.50F, // coords
+				25.0F, 25.0F); // size
+		Graphics2D gd2 = (Graphics2D) g;
+		// g.setColor(Color.BLACK);
+		gd2.draw(ellipse2D);
+		getLabel(_circle_counter).setText("  Koordinaten Kreis"+_circle_counter +": X:" +getXCoord(_circle_counter)+ "    Y: "+getYCoord(_circle_counter ));
+	
+		
+				
+		//System.out.println("keks");
+		//System.out.println("Koordinate X: "+_xcoord);
+		//System.out.println("Koordinate Y: "+_ycoord);
+		}	
 	}
-
-	// draws a circle on double click
+	
 	public void onDoubleClick(MouseEvent e) {
 
 		if (_circle_counter < 2) {
@@ -55,9 +67,15 @@ public class MainCanvas extends Canvas {
 			_circle_counter = 1;
 			setXCoord(_circle_counter, e.getX());
 			setYCoord(_circle_counter, e.getY());
+			getLabel(2).setText("  Koordinaten Kreis2");
 			repaint();
 		}
+		
 	}
+
+	
+	
+	
 
 	@Override
 	public void repaint() {
@@ -69,6 +87,35 @@ public class MainCanvas extends Canvas {
 	public void update(Graphics g) {
 		System.out.println("update");
 		super.update(g);
+	}
+
+	
+	void setLabel(Label label, int n) {
+		switch (n) {
+		case 1:
+			Label1 = label ;
+			break;
+		case 2:
+			Label2 = label;
+			break;
+		}
+
+		
+	}
+	Label getLabel(int n) {
+		switch (n) {
+		case 1:
+			return Label1;
+			
+		case 2:
+			return Label2;
+		
+		default:
+			return Label1;
+		}
+		
+
+		
 	}
 
 	float getXCoord(int n) {
@@ -112,4 +159,6 @@ public class MainCanvas extends Canvas {
 			break;
 		}
 	}
+	
+	
 }
