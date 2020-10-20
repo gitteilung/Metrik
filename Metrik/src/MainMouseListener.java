@@ -4,30 +4,21 @@ import java.awt.event.*;
 public class MainMouseListener extends Frame implements MouseListener {
 
 	MainCanvas _Canvas;
-	int _circle_counter = 0;
+	
 
 	MainMouseListener(MainCanvas Mc) {
 		addMouseListener(this);
 		_Canvas = Mc;
 	}
 
-	// reads on doubleclick the coordinates of the mouse and lets it draw at the
-	// position
+	// tests on double click and then calls the function of the canvas
 	@Override
 	public void mouseClicked(MouseEvent e) {
 
 		if (e.getClickCount() == 2) {
-			_Canvas.setXCoord(e.getX());
-			_Canvas.setYCoord(e.getY());
 			
-			//every 2 drawings the canvas is cleared
-			if (_circle_counter < 2) {
-				_Canvas.paint(_Canvas.getGraphics());
-				_circle_counter++;
-			} else {
-				_Canvas.repaint();
-				_circle_counter = 1;
-			}
+			_Canvas.onDoubleClick(e);
+			
 		}
 		// _canvas.update(_canvas.getGraphics())
 		// System.out.println("Click: " + e.getClickCount());

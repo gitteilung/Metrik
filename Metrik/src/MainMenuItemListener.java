@@ -3,29 +3,38 @@ import java.awt.event.*;
 
 public class MainMenuItemListener implements ActionListener{
 
+	
+	private MainCanvas _Mc;
+	
+	
+	public MainMenuItemListener(MainCanvas Mc ) {
+		_Mc = Mc;
+	}
+	
+	//With a corresponding action the background color is changed
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
-		Menu m =(Menu) e.getSource();
-		MenuBar mb = (MenuBar) m.getParent();
-		MainFrame mf = (MainFrame) mb.getParent();
-		MainCanvas mc = (MainCanvas) mf.getComponent(0);
+		//Menu m =(Menu) e.getSource();
+		//MenuBar mb = (MenuBar) m.getParent();
+	//	MainFrame mf = (MainFrame) mb.getParent();
+	//	MainCanvas mc = (MainCanvas) mf.getComponent(0);
 		String action = e.getActionCommand();
 		
 		{
 		switch (action) {
 		
-		case "Color: red": 
-			mc.setBackground(Color.RED);
+		case "Rot": 
+			_Mc.setBackground(Color.RED);
 			break;
-		case "Color: green": 
-			mc.setBackground(Color.GREEN);
+		case "Grün": 
+			_Mc.setBackground(Color.GREEN);
 			break;
-		case "Color: blue": 
-			mc.setBackground(Color.BLUE);
+		case "Blau": 
+			_Mc.setBackground(Color.BLUE);
 			break;
 		}
-		mc.repaint();
+		//mc.repaint();
 		}
 	}
 	

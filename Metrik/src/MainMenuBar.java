@@ -4,14 +4,16 @@ public class MainMenuBar extends MenuBar {
 
 	private Menu _menu;
 	
-	public MainMenuBar() {
-		_menu = new Menu("Background Color");
-		_menu.add(new MenuItem("Color: red"));
-		_menu.add(new MenuItem("Color: green"));
-		_menu.add(new MenuItem("Color: blue"));
+	
+	//Creates a menu for the background colors and adds the listener
+	public MainMenuBar(MainCanvas Mc) {
+		_menu = new Menu("Hintergrund");
+		_menu.add(new MenuItem("Rot"));
+		_menu.add(new MenuItem("Grün"));
+		_menu.add(new MenuItem("Blau"));
 		
 		this.add(_menu);
-		_menu.addActionListener(new MainMenuItemListener());
+		_menu.addActionListener(new MainMenuItemListener(Mc));
 		
 	}
 	

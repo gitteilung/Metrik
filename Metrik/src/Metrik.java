@@ -24,7 +24,8 @@ public class Metrik {
 		Mf.add(Mc);
 		//adds the MouseListener to the canvas
 		Mc.addMouseListener(Mm);
-		Mf.setMenuBar(new MainMenuBar());
+		//creates a menubar and adds it to the window
+		Mf.setMenuBar(new MainMenuBar(Mc));
 		
 		
 	}
