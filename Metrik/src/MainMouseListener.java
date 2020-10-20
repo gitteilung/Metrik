@@ -2,7 +2,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class MainMouseListener extends Frame implements MouseListener {
-
+	
+	
 	MainCanvas _Canvas;
 	int _circle_counter = 0;
 
@@ -28,10 +29,12 @@ public class MainMouseListener extends Frame implements MouseListener {
 				_Canvas.repaint();
 				_circle_counter = 1;
 			}
+			
 		}
 		// _canvas.update(_canvas.getGraphics())
 		// System.out.println("Click: " + e.getClickCount());
 	}
+	
 
 	@Override
 	public void mouseEntered(MouseEvent e) {

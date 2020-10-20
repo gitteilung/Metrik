@@ -25,7 +25,7 @@ public class Metrik {
 		//adds the MouseListener to the canvas
 		Mc.addMouseListener(Mm);
 		
-		
+	//adsadaw	
 	}
 
 }

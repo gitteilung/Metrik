@@ -10,12 +10,16 @@ public class MainCanvas extends Canvas {
 	
 	
 	
+	
 	public MainCanvas(int width, int height) {
 		this.setSize(width, height);
 		this.setBackground(Color.GREEN);
 		this.setVisible(true);
 		this.setFocusable(false);
+		
 	}
+	
+	
 	
 	//draws a circle
 	@Override
@@ -29,6 +33,8 @@ public class MainCanvas extends Canvas {
 		gd2.draw(ellipse2D);
 				
 		//System.out.println("keks");
+		//System.out.println("Koordinate X: "+_xcoord);
+		//System.out.println("Koordinate Y: "+_ycoord);
 		
 	}
 	
@@ -49,4 +55,6 @@ public class MainCanvas extends Canvas {
 	void  setYCoord(float y) {
 		_ycoord = y;
 	}
+	
+	
 }
