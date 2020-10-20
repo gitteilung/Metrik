@@ -13,11 +13,12 @@ public class MainCanvas extends Canvas {
 	
 
 	int _circle_counter = 0;
-	private int radius = 0;
-	private int radius1 = 0;
-	private int radius2 = 0;
+	private int radius = 25;
+	private int radius1 = 25;
+	private int radius2 = 25;
 	private Label Label1;
 	private Label Label2;
+	private Label Label3;
 	
 	
 	
@@ -26,6 +27,7 @@ public class MainCanvas extends Canvas {
 		this.setBackground(Color.GREEN);
 		this.setVisible(true);
 		this.setFocusable(false);
+		
 		
 	}
 	
@@ -43,9 +45,9 @@ public class MainCanvas extends Canvas {
 			
 		Ellipse2D ellipse2D;
 		ellipse2D = new Ellipse2D.Float(
-				this.getXCoord(_circle_counter) - this.getRadius(1)/2,
-				this.getYCoord(_circle_counter) - this.getRadius(1)/2, // coords
-				25.0F, 25.0F); // size
+				this.getXCoord(_circle_counter) - this.getRadius(_circle_counter)/2,
+				this.getYCoord(_circle_counter) - this.getRadius(_circle_counter)/2, // coords
+				this.getRadius(_circle_counter), this.getRadius(_circle_counter)); // size
 		Graphics2D gd2 = (Graphics2D) g;
 		// g.setColor(Color.BLACK);
 		gd2.draw(ellipse2D);
@@ -98,20 +100,20 @@ public class MainCanvas extends Canvas {
 	
 	void setRadius(int radius) {
 		this.radius = radius;
-	}
-	
-	void setRadius(Label label, int n) {
-		switch (n) {
-		case 1:
-			Label1 = label ;
-			break;
-		case 2:
-			Label2 = label;
-			break;
+		Label3.setText("  Kreisradius: "+ radius);
+		if (_circle_counter == 0) {
+			this.radius1 = radius;
+			this.radius2 = radius;
 		}
-
+		if (_circle_counter == 1) {
+			this.radius2 = radius;
+		}
 		
 	}
+	
+	
+
+		
 
 	int getRadius(int n) {
 		switch (n) {
@@ -133,6 +135,9 @@ public class MainCanvas extends Canvas {
 			break;
 		case 2:
 			Label2 = label;
+			break;
+		case 3:
+			Label3 = label;
 			break;
 		}
 

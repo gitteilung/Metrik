@@ -22,6 +22,7 @@ public class MainMenuBar extends MenuBar {
 		_radiusMenu.add(new MenuItem("20"));
 		_radiusMenu.add(new MenuItem("25"));
 		_radiusMenu.add(new MenuItem("30"));
+		
 		this.add(_radiusMenu);
 		_radiusMenu.addActionListener(new MainMenuItemListener(Mc));
 	}

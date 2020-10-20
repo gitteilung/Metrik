@@ -21,9 +21,6 @@ public class Metrik {
 		MainCanvas Mc = new MainCanvas(width, height);
 		MainMouseListener Mm = new MainMouseListener(Mc);
 		
-		ScrollPane radiusSlider= new ScrollPane();
-		radiusSlider.setBounds(600, 600, 200, 20);
-		Mf.add(radiusSlider);
 		
 		//creates Label   
 		Label derKreis1 = new Label ("  Koordinaten Kreis1: ");	
@@ -43,6 +40,9 @@ public class Metrik {
 		Mc.addMouseListener(Mm);
 		Mc.setLabel(derKreis1, 1);
 		Mc.setLabel(derKreis2, 2);
+		Mc.setLabel(radius,3);
+		
+		Mc.setRadius(25);
 		//creates a menubar and adds it to the window
 		Mf.setMenuBar(new MainMenuBar(Mc));
 		
