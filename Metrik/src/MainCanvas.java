@@ -1,13 +1,20 @@
 import java.awt.*;
 import java.awt.geom.*;
+import java.awt.event.*;
 
 
 public class MainCanvas extends Canvas {
 
 	//coordinates for the drawing
-	float _xcoord;
-	float _ycoord;
+	float _xcoord1;
+	float _ycoord1;
+	float _xcoord2;
+	float _ycoord2;
 	
+
+	int _circle_counter = 0;
+	private Label Label1;
+	private Label Label2;
 	
 	
 	
@@ -23,37 +30,114 @@ public class MainCanvas extends Canvas {
 	
 	//draws a circle
 	@Override
-	public void paint(Graphics g) {
+	public void paint(Graphics g) { 
+		if (_circle_counter > 0) {
+			
+			
 		Ellipse2D ellipse2D;
-		ellipse2D = new Ellipse2D.Float(
-				_xcoord-12.5F, _ycoord-12.50F, //coords
-				25.0F, 25.0F); //size
-		Graphics2D gd2 = (Graphics2D)g;
-	//	g.setColor(Color.BLACK);
+		ellipse2D = new Ellipse2D.Float(this.getXCoord(_circle_counter) - 12.5F,
+				this.getYCoord(_circle_counter) - 12.50F, // coords
+				25.0F, 25.0F); // size
+		Graphics2D gd2 = (Graphics2D) g;
+		// g.setColor(Color.BLACK);
 		gd2.draw(ellipse2D);
+		getLabel(_circle_counter).setText("  Koordinaten Kreis"+_circle_counter +": X:" +getXCoord(_circle_counter)+ "    Y: "+getYCoord(_circle_counter ));
+	
+		
 				
 		//System.out.println("keks");
 		//System.out.println("Koordinate X: "+_xcoord);
 		//System.out.println("Koordinate Y: "+_ycoord);
+		}	
+	}
+	
+	public void onDoubleClick(MouseEvent e) {
+
+		if (_circle_counter < 2) {
+			_circle_counter++;
+			setXCoord(_circle_counter, e.getX());
+			setYCoord(_circle_counter, e.getY());
+			paint(this.getGraphics());
+			// every 2 drawings the canvas is cleared
+		} else {
+			_circle_counter = 1;
+			setXCoord(_circle_counter, e.getX());
+			setYCoord(_circle_counter, e.getY());
+			getLabel(2).setText("  Koordinaten Kreis2");
+			repaint();
+		}
 		
 	}
-	
-	
 
-	float getXCoord() {
-		return _xcoord;
-	}
 	
-	float getYCoord() {
-		return _ycoord;
+	void setLabel(Label label, int n) {
+		switch (n) {
+		case 1:
+			Label1 = label ;
+			break;
+		case 2:
+			Label2 = label;
+			break;
+		}
+
+		
 	}
-	
-	void setXCoord(float x) {
-		_xcoord = x;
+	Label getLabel(int n) {
+		switch (n) {
+		case 1:
+			return Label1;
+			
+		case 2:
+			return Label2;
+		
+		default:
+			return Label1;
+		}
+		
+
+		
 	}
-	
-	void  setYCoord(float y) {
-		_ycoord = y;
+
+	float getXCoord(int n) {
+		switch (n) {
+		case 1:
+			return _xcoord1;
+		case 2:
+			return _xcoord2;
+		}
+		return 0;
+	}
+
+	float getYCoord(int n) {
+		switch (n) {
+		case 1:
+			return _ycoord1;
+		case 2:
+			return _ycoord2;
+		}
+		return 0;
+	}
+
+	void setXCoord(int n, float x) {
+		switch (n) {
+		case 1:
+			_xcoord1 = x;
+			break;
+		case 2:
+			_xcoord2 = x;
+			break;
+		}
+	}
+
+	void setYCoord(int n, float y) {
+		switch (n) {
+		case 1:
+			_ycoord1 = y;
+			break;
+		case 2:
+			_ycoord2 = y;
+			break;
+		}
 	}
 	
 	

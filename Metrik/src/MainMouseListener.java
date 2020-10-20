@@ -18,17 +18,7 @@ public class MainMouseListener extends Frame implements MouseListener {
 	public void mouseClicked(MouseEvent e) {
 
 		if (e.getClickCount() == 2) {
-			_Canvas.setXCoord(e.getX());
-			_Canvas.setYCoord(e.getY());
-			
-			//every 2 drawings the canvas is cleared
-			if (_circle_counter < 2) {
-				_Canvas.paint(_Canvas.getGraphics());
-				_circle_counter++;
-			} else {
-				_Canvas.repaint();
-				_circle_counter = 1;
-			}
+			_Canvas.onDoubleClick(e);
 			
 		}
 		// _canvas.update(_canvas.getGraphics())

@@ -7,6 +7,7 @@
  */
 import java.awt.*;
 public class Metrik {
+	
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -20,10 +21,20 @@ public class Metrik {
 		MainCanvas Mc = new MainCanvas(width, height);
 		MainMouseListener Mm = new MainMouseListener(Mc);
 		
+		Label derKreis1 = new Label ("  Koordinaten Kreis1: ");	
+		derKreis1.setBounds(20, 40, 250, 15);
+		Label derKreis2 = new Label ("  Koordinaten Kreis2: ");
+		derKreis2.setBounds(20, 60, 250, 15);
+		Mf.add(derKreis1);
+		Mf.add(derKreis2);
+		
+		
 		//adds the canvas to the frame
 		Mf.add(Mc);
 		//adds the MouseListener to the canvas
 		Mc.addMouseListener(Mm);
+		Mc.setLabel(derKreis1, 1);
+		Mc.setLabel(derKreis2, 2);
 		
 	//adsadaw	
 	}
