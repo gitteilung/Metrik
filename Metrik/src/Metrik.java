@@ -21,6 +21,7 @@ public class Metrik {
 		MainCanvas Mc = new MainCanvas(width, height);
 		MainMouseListener Mm = new MainMouseListener(Mc);
 		
+		//creates Label   
 		Label derKreis1 = new Label ("  Koordinaten Kreis1: ");	
 		derKreis1.setBounds(20, 40, 250, 15);
 		Label derKreis2 = new Label ("  Koordinaten Kreis2: ");
