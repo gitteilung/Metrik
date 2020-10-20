@@ -20,7 +20,6 @@ public class MainMenuItemListener implements ActionListener{
 	//	MainFrame mf = (MainFrame) mb.getParent();
 	//	MainCanvas mc = (MainCanvas) mf.getComponent(0);
 		String action = e.getActionCommand();
-		
 		{
 		switch (action) {
 		
@@ -32,6 +31,24 @@ public class MainMenuItemListener implements ActionListener{
 			break;
 		case "Blau": 
 			_Mc.setBackground(Color.BLUE);
+			break;
+		case "5": 
+			_Mc.setRadius(5);
+			break;
+		case "10": 
+			_Mc.setRadius(10);
+			break;
+		case "15": 
+			_Mc.setRadius(15);
+			break;
+		case "20": 
+			_Mc.setRadius(20);
+			break;
+		case "25": 
+			_Mc.setRadius(25);
+			break;
+		case "30": 
+			_Mc.setRadius(30);
 			break;
 		}
 		//mc.repaint();

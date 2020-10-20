@@ -13,6 +13,9 @@ public class MainCanvas extends Canvas {
 	
 
 	int _circle_counter = 0;
+	private int radius = 0;
+	private int radius1 = 0;
+	private int radius2 = 0;
 	private Label Label1;
 	private Label Label2;
 	
@@ -39,8 +42,9 @@ public class MainCanvas extends Canvas {
 
 			
 		Ellipse2D ellipse2D;
-		ellipse2D = new Ellipse2D.Float(this.getXCoord(_circle_counter) - 12.5F,
-				this.getYCoord(_circle_counter) - 12.50F, // coords
+		ellipse2D = new Ellipse2D.Float(
+				this.getXCoord(_circle_counter) - this.getRadius(1)/2,
+				this.getYCoord(_circle_counter) - this.getRadius(1)/2, // coords
 				25.0F, 25.0F); // size
 		Graphics2D gd2 = (Graphics2D) g;
 		// g.setColor(Color.BLACK);
@@ -68,6 +72,8 @@ public class MainCanvas extends Canvas {
 			setXCoord(_circle_counter, e.getX());
 			setYCoord(_circle_counter, e.getY());
 			getLabel(2).setText("  Koordinaten Kreis2");
+			radius1 = radius;
+			radius2 = radius;
 			repaint();
 		}
 		
@@ -89,6 +95,36 @@ public class MainCanvas extends Canvas {
 		super.update(g);
 	}
 
+	
+	void setRadius(int radius) {
+		this.radius = radius;
+	}
+	
+	void setRadius(Label label, int n) {
+		switch (n) {
+		case 1:
+			Label1 = label ;
+			break;
+		case 2:
+			Label2 = label;
+			break;
+		}
+
+		
+	}
+
+	int getRadius(int n) {
+		switch (n) {
+		case 1:
+			return radius1;
+			
+		case 2:
+			return radius2;
+		
+		default:
+			return radius;
+		}
+	}
 	
 	void setLabel(Label label, int n) {
 		switch (n) {
