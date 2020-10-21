@@ -1,6 +1,7 @@
 import java.awt.*;
 import java.awt.geom.*;
 import java.awt.event.*;
+import java.lang.*;
 
 
 public class MainCanvas extends Canvas {
@@ -19,6 +20,7 @@ public class MainCanvas extends Canvas {
 	private Label Label1;
 	private Label Label2;
 	private Label Label3;
+	private Label Label4;
 	
 	
 	
@@ -34,12 +36,14 @@ public class MainCanvas extends Canvas {
 	// draws a new circle, or redraws both, e.g. when changing the background
 	@Override
 	public void paint(Graphics g) { 
+		getLabel(4).setText("  Entfernung der beide Kreise: ");
 		if (_circle_counter > 0) {
 			
 			if (_circle_counter == 2) {
 				_circle_counter = 1;
 				paint(this.getGraphics());
 				_circle_counter = 2;
+				Label4.setText(String.format("  Entfernung der beide Kreise: " +"%.2f",Math.sqrt(Math.pow((double)(this.getXCoord(1) - this.getXCoord(2)),2) + Math.pow((double)(this.getYCoord(1) - this.getYCoord(2)) ,2))));
 			}
 			
 		Ellipse2D ellipse2D;
@@ -50,6 +54,7 @@ public class MainCanvas extends Canvas {
 		Graphics2D gd2 = (Graphics2D) g;
 		// g.setColor(Color.BLACK);
 		gd2.draw(ellipse2D);
+		getLabel(_circle_counter).setText("  Koordinaten Kreis"+_circle_counter +": X:" +getXCoord(_circle_counter)+ "    Y: "+getYCoord(_circle_counter ));
 		getLabel(_circle_counter).setText("  Koordinaten Kreis"+_circle_counter +": X:" +getXCoord(_circle_counter)+ "    Y: "+getYCoord(_circle_counter ));
 		
 				
@@ -137,6 +142,9 @@ public class MainCanvas extends Canvas {
 		case 3:
 			Label3 = label;
 			break;
+		case 4:
+			Label4 = label;
+			break;
 		}
 
 		
@@ -148,7 +156,13 @@ public class MainCanvas extends Canvas {
 			
 		case 2:
 			return Label2;
-		
+			
+		case 3:
+			return Label3;
+			
+		case 4:
+			return Label4;
+			
 		default:
 			return Label1;
 		}

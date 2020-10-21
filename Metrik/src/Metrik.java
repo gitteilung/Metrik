@@ -2,7 +2,7 @@
  *Creates a window on which a circle is drawn when double-clicked.
  *     
  * @author Nico Hinterthaner, Hoang Long Heiligentag
- * @version 1.2
+ * @version 1.2.1
  * 
  */
 import java.awt.*;
@@ -24,14 +24,17 @@ public class Metrik {
 		
 		//creates Label   
 		Label derKreis1 = new Label ("  Koordinaten Kreis1: ");	
-		derKreis1.setBounds(20, 60, 250, 15);
+		derKreis1.setBounds(20, 80, 250, 15);
 		Label derKreis2 = new Label ("  Koordinaten Kreis2: ");
-		derKreis2.setBounds(20, 80, 250, 15);
+		derKreis2.setBounds(20, 100, 250, 15);
 		Mf.add(derKreis1);
 		Mf.add(derKreis2);
 		Label radius = new Label ("  Kreisradius: ");	
 		radius.setBounds(20, 40, 250, 15);
+		Label Distanz = new Label ("  Entfernung der beide Kreise: ");
+		Distanz.setBounds(20, 60, 250, 15);
 		Mf.add(radius);
+		Mf.add(Distanz);
 		
 		
 		//adds the canvas to the frame
@@ -41,6 +44,7 @@ public class Metrik {
 		Mc.setLabel(derKreis1, 1);
 		Mc.setLabel(derKreis2, 2);
 		Mc.setLabel(radius,3);
+		Mc.setLabel(Distanz, 4);
 		
 		Mc.setRadius(25);
 		//creates a menubar and adds it to the window
