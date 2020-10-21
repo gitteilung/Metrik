@@ -41,7 +41,6 @@ public class MainCanvas extends Canvas {
 				paint(this.getGraphics());
 				_circle_counter = 2;
 			}
-
 			
 		Ellipse2D ellipse2D;
 		ellipse2D = new Ellipse2D.Float(
@@ -52,7 +51,6 @@ public class MainCanvas extends Canvas {
 		// g.setColor(Color.BLACK);
 		gd2.draw(ellipse2D);
 		getLabel(_circle_counter).setText("  Koordinaten Kreis"+_circle_counter +": X:" +getXCoord(_circle_counter)+ "    Y: "+getYCoord(_circle_counter ));
-	
 		
 				
 		//System.out.println("keks");
