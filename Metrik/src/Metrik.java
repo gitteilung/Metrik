@@ -2,7 +2,7 @@
  *Creates a window on which a circle is drawn when double-clicked.
  *     
  * @author Nico Hinterthaner, Hoang Long Heiligentag
- * @version 1.2
+ * @version 1.2.2
  * 
  */
 import java.awt.*;

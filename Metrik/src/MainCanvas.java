@@ -40,6 +40,8 @@ public class MainCanvas extends Canvas {
 				_circle_counter = 1;
 				paint(this.getGraphics());
 				_circle_counter = 2;
+				g.drawLine((int) getXCoord(1),(int) getYCoord(1),(int) getXCoord(2),(int) getYCoord(2));
+
 			}
 			
 		Ellipse2D ellipse2D;
