@@ -43,7 +43,12 @@ public class MainCanvas extends Canvas {
 				_circle_counter = 1;
 				paint(this.getGraphics());
 				_circle_counter = 2;
+				//calculates the distance between the circles and show it 
 				Label4.setText(String.format("  Entfernung der beide Kreise: " +"%.2f",Math.sqrt(Math.pow((double)(this.getXCoord(1) - this.getXCoord(2)),2) + Math.pow((double)(this.getYCoord(1) - this.getYCoord(2)) ,2))));
+				//draws a line between the circles
+				g.drawLine((int) getXCoord(1),(int) getYCoord(1),(int) getXCoord(2),(int) getYCoord(2));
+
+
 			}
 			
 		Ellipse2D ellipse2D;
